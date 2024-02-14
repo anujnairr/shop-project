@@ -4,7 +4,7 @@ const path = require('path');
 
 const p = path.join(rootDir, 'data', 'products.json');
 
-const readAll = (cb) => {
+const getProductsFromFile = (cb) => {
     fs.readFile(p, (err, fileContent) => {
         if (err) {
             return cb([]);
@@ -20,7 +20,7 @@ module.exports = class Product {
     }
 
     save() {
-        readAll(products => {
+        getProductsFromFile(products => {
             products.push(this);
             fs.writeFile(p, JSON.stringify(products), (err) => {
                 console.log(err);
@@ -29,7 +29,7 @@ module.exports = class Product {
     };
 
     static fetchAll(cb) {
-        readAll(cb);
+        getProductsFromFile(cb);
     };
 
 };
