@@ -7,7 +7,7 @@ const Product = sequelize.define('product', {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    primarKey: true
+    primaryKey: true
   },
   title: Sequelize.STRING,
   price: {
@@ -22,7 +22,6 @@ const Product = sequelize.define('product', {
     type: Sequelize.STRING,
     allowNull: false
   }
-
 });
 
 module.exports = Product;
