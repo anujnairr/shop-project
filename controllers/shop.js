@@ -9,7 +9,6 @@ exports.getProducts = (req, res, next) => {
         pageTitle: 'All Products',
         path: '/products'
       });
-      console.log(result);
     })
     .catch((err) => {
       console.log(err);
